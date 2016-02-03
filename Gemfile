@@ -30,6 +30,7 @@ gem 'geocoder'
 gem 'figaro'
 gem 'faker'
 gem 'newrelic_rpm'
+gem 'annotate'
 
 gem 'bootstrap-sass'
 # Use Unicorn as the app server
