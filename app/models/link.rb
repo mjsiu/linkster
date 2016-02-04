@@ -14,4 +14,8 @@
 class Link < ActiveRecord::Base
 
   belongs_to :user
+  belongs_to :link_list_items
+  has_many :link_lists,
+  through: :link_list_items
+
 end

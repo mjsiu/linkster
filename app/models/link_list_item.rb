@@ -10,4 +10,6 @@
 #
 
 class LinkListItem < ActiveRecord::Base
+  belongs_to :link_list
+  belongs_to :link
 end
