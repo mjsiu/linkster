@@ -12,6 +12,7 @@ var Index = React.createClass({
     </div>
     <HomeNavBar/>
     <div className="home-body"/>
+      
     </div>
   )
   }

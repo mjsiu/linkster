@@ -1,7 +1,0 @@
-var UserConstants = {
-  RECEIVENEWUSER: "RECEIVENEWUSER",
-  RECEIVEUSER: "RECEIVEUSER",
-  REMOVECURRENTUSER: "REMOVECURRENTUSER"
-}
-
-module.exports = UserConstants;

@@ -24148,9 +24148,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
+	var Login = __webpack_require__(213);
 	
 	var NavBar = React.createClass({
-	  displayName: "NavBar",
+	  displayName: 'NavBar',
 	
 	  handleHomeClick: function () {
 	    this.props.history.pushState(null, "/");
@@ -24167,53 +24168,18 @@
 	  render: function () {
 	
 	    return React.createElement(
-	      "div",
+	      'div',
 	      null,
 	      React.createElement(
-	        "nav",
-	        { className: "navbar navbar-default" },
+	        'nav',
+	        { className: 'navbar navbar-default' },
 	        React.createElement(
-	          "div",
-	          { className: "container-fluid" },
+	          'div',
+	          { className: 'container-fluid' },
 	          React.createElement(
-	            "div",
-	            { className: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1" },
-	            React.createElement(
-	              "ul",
-	              { className: "nav navbar-nav navbar-right" },
-	              React.createElement(
-	                "li",
-	                { className: "active" },
-	                React.createElement(
-	                  "a",
-	                  { onClick: this.handleHomeClick },
-	                  "Linkster"
-	                )
-	              ),
-	              React.createElement(
-	                "li",
-	                null,
-	                React.createElement(
-	                  "a",
-	                  { onClick: this.handleCreateClick },
-	                  "Create Link List ",
-	                  React.createElement(
-	                    "span",
-	                    { className: "sr-only" },
-	                    "(current)"
-	                  )
-	                )
-	              ),
-	              React.createElement(
-	                "li",
-	                null,
-	                React.createElement(
-	                  "a",
-	                  { onClick: this.handleSearchClick },
-	                  "Explore"
-	                )
-	              )
-	            )
+	            'div',
+	            { className: 'collapse navbar-collapse', id: 'bs-example-navbar-collapse-1' },
+	            React.createElement(Login, { history: this.props.history })
 	          )
 	        )
 	      )
@@ -24358,6 +24324,110 @@
 	});
 	
 	module.exports = HomeNavBar;
+
+/***/ },
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var Login = React.createClass({
+	  displayName: "Login",
+	
+	  handleSignOutClick: function () {
+	    $.ajax({
+	      url: "/session",
+	      method: "DELETE",
+	      success: function () {
+	        window.location = 'session/new';
+	      }
+	    });
+	  },
+	
+	  handleLoginClick: function () {
+	    $.get('session/new', function () {
+	      window.location = 'session/new';
+	    });
+	  },
+	
+	  handleSignUpClick: function () {
+	    $.get('user/new', function () {
+	      window.location = 'user/new';
+	    });
+	  },
+	
+	  handleProfileClick: function () {
+	    this.props.history.pushState(null, "/user", {});
+	  },
+	
+	  render: function () {
+	    var login;
+	    var signup;
+	    if (window.user.username) {
+	      login = React.createElement(
+	        "li",
+	        { className: "dropdown" },
+	        React.createElement(
+	          "a",
+	          { href: "#", className: "dropdown-toggle", "data-toggle": "dropdown", role: "button", "aria-haspopup": "true", "aria-expanded": "false" },
+	          window.user.username,
+	          React.createElement("span", { className: "caret" })
+	        ),
+	        React.createElement(
+	          "ul",
+	          { className: "dropdown-menu" },
+	          React.createElement(
+	            "li",
+	            null,
+	            React.createElement(
+	              "a",
+	              { onClick: this.handleProfileClick },
+	              "User Profile"
+	            )
+	          ),
+	          React.createElement(
+	            "li",
+	            { onClick: this.handleSignOutClick },
+	            React.createElement(
+	              "a",
+	              null,
+	              "Log Out"
+	            )
+	          )
+	        )
+	      );
+	    } else {
+	      login = React.createElement(
+	        "li",
+	        null,
+	        React.createElement(
+	          "a",
+	          { onClick: this.handleLoginClick },
+	          "Sign In"
+	        )
+	      );
+	      signup = React.createElement(
+	        "li",
+	        null,
+	        React.createElement(
+	          "a",
+	          { onClick: this.handleSignUpClick },
+	          "Sign Up"
+	        )
+	      );
+	    }
+	
+	    return React.createElement(
+	      "ul",
+	      { className: "nav navbar-nav navbar-right" },
+	      signup,
+	      " ",
+	      login
+	    );
+	  }
+	});
+	
+	module.exports = Login;
 
 /***/ }
 /******/ ]);
