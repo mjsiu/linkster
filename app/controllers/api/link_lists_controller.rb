@@ -4,4 +4,8 @@ class Api::LinkListsController < ApplicationController
     @link_lists = LinkList.all
   end
 
+  def show
+    @link_list = LinkList.find(params[:id])
+  end
+
 end

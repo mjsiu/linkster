@@ -11,36 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203225545) do
+ActiveRecord::Schema.define(version: 20160121002602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "link_list_items", force: :cascade do |t|
-    t.integer  "link_list_id", null: false
-    t.integer  "link_id",      null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  add_index "link_list_items", ["link_list_id"], name: "index_link_list_items_on_link_list_id", using: :btree
 
   create_table "link_lists", force: :cascade do |t|
     t.integer  "user_id",     null: false
     t.string   "title",       null: false
     t.text     "description"
+    t.string   "link_image"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "links", force: :cascade do |t|
-    t.string   "title",       null: false
-    t.text     "url",         null: false
-    t.integer  "user_id",     null: false
+    t.string   "title",        null: false
+    t.text     "url",          null: false
+    t.integer  "user_id",      null: false
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "link_list_id", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
+
+  add_index "links", ["link_list_id"], name: "index_links_on_link_list_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

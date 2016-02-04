@@ -4,6 +4,7 @@ class CreateLinkLists < ActiveRecord::Migration
       t.integer :user_id, null: false
       t.string :title, null: false
       t.text :description
+      t.string :link_image
 
       t.timestamps null: false
     end
