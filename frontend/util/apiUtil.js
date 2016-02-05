@@ -1,33 +1,38 @@
 var ApiUtil = {
-  createUserAccount: function(credentials, receiveNewUser) {
-    $.ajax({
-      url: 'api/users',
-      method: "post",
-      data: {user: credentials},
-      success: function(user){
-                receiveNewUser(user);
-              },
-      error: function(error, status){
-                debugger;
-                // console.log(status)
-              }
-    });
-  },
 
-  createSession: function(credentials, receiveCurrentUser) {
-    $.ajax({
-      url: 'api/session',
-      method: "post",
-      data: {user: credentials},
-      success: function(user) {
-                receiveCurrentUser(user);
-              },
-      error: function(error, status) {
-                debugger;
-                // console.log(status);
-              }
-    });
-  },
+  createNewListing: function(listing, callback){
+      $.ajax({
+        url: "api/listings",
+        method: "POST",
+        data: { listing: listing },
+        success: function (listing) {
+          callback();
+        },
+        error: function(error) {
+          ApiActions.formError(error);
+        }
+      });
+    },
+
+    deleteListing: function (listing) {
+      $.ajax({
+        url: "api/listings/" + listing.id,
+        method: "DELETE",
+        data: { listing: listing },
+        success: function (listing) {
+          ApiActions.receiveDeletedListing(listing);
+        }
+      });
+    },
+
+    editListing: function (listing) {
+      $.ajax({
+        url: "api/listings/" + listing.id,
+        method: "PATCH",
+        data: { listing: listing }
+      });
+    },
+
 };
 
 module.exports = ApiUtil;

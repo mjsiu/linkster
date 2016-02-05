@@ -18,15 +18,18 @@ var HomeNavBar = React.createClass({
 
     return (
       <div>
-        <nav className="navbar navbar-default">
+        <nav className="navbar navbar-default home">
           <div className="container-fluid">
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li><a onClick={this.handleCreateClick}>Create Link List <span className="sr-only">(current)</span></a></li>
-                <li><a onClick={this.handleSearchClick}>Explore</a></li>
-                <li className="active"><a onClick={this.handleHomeClick}>Linkster</a></li>
-                <li><a onClick={this.handleCreateClick}>Create Link List <span className="sr-only">(current)</span></a></li>
-                <li><a onClick={this.handleSearchClick}>Explore</a></li>
+                <li><a onClick={this.handleSearchClick}>Featured</a></li>
+                <li><a onClick={this.handleSearchClick}>General CS</a></li>
+                <li><a onClick={this.handleSearchClick}>Algorithms & Datastructures</a></li>
+                <li><a onClick={this.handleSearchClick}>Javascript</a></li>
+                <li><a onClick={this.handleSearchClick}>Ruby on Rails</a></li>
+                <li><a onClick={this.handleSearchClick}>SQL</a></li>
+                <li><a onClick={this.handleSearchClick}>Dev Tools</a></li>
+                <li><a onClick={this.handleSearchClick}>More</a></li>
               </ul>
             </div>
           </div>

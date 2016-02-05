@@ -19,14 +19,25 @@ var NavBar = React.createClass({
 
     return (
       <div>
-        <nav className="navbar navbar-default">
-          <div className="container-fluid">
-            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <Login history={this.props.history}/>
-            </div>
+      <nav className="navbar navbar-default navbar-fixed-top">
+        <div className="container-fluid">
+        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul className="nav navbar-nav">
+            <li className="active"><a onClick={this.handleHomeClick}>Linkster</a></li>
+            <li><a onClick={this.handleCreateClick}>Create Link List <span className="sr-only">(current)</span></a></li>
+            <li><a onClick={this.handleSearchClick}>Explore</a></li>
+          </ul>
+          <Login history={this.props.history}/>
+
+        </div>
+        <div className="banner">
+          <h1 className="banner-title">Linkster</h1>
+        </div>
           </div>
-        </nav>
-      </div>
+    </nav>
+
+    </div>
+
     );
   }
 });

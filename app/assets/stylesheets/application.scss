@@ -29,10 +29,36 @@
   */
  /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
+.navbar.navbar-default.home {
+  width: 100%;
+  overflow: hidden;
+}
+
+.navbar.navbar-default.home ul {
+  list-style: none;
+  position: relative;
+  float: left;
+  display: block;
+  left: 50%;
+}
+
+.navbar.navbar-default.home ul li {
+  position: relative;
+  float: left;
+  display: block;
+  right: 50%;
+  border-bottom: 3px solid black;
+}
+
+.navbar.navbar-default.home ul li:hover {
+  border-bottom: 3px solid #02ABED;
+}
+
 .home-body {
   background-color: #F7F7F7;
   height: 100vh;
   width: 100%;
+  position: fixed;
 }
 
 .banner-title {
@@ -45,6 +71,7 @@
 .banner {
   height: 15vh;
   background-color: #02ABED;
+  width: 100vw;
 }
 
 // This is old
@@ -382,20 +409,20 @@ animation-direction: alternate;
   width: 100%;
 }
 
-.splash-area1 {
- position: relative;
- display: block;
- margin-left: 0;
- margin-right: 0;
- width: 100%;
- height: 975px;
- background: url('http://res.cloudinary.com/mackslist/image/upload/c_scale,w_1920/v1450937792/sanfran_ck911l.jpg')
- no-repeat center center;
- -webkit-background-size: cover;
- -moz-background-size: cover;
- -o-background-size: cover;
- background-size: cover;
-}
+// .splash-area1 {
+//  position: relative;
+//  display: block;
+//  margin-left: 0;
+//  margin-right: 0;
+//  width: 100%;
+//  height: 975px;
+//  background: url('http://res.cloudinary.com/mackslist/image/upload/c_scale,w_1920/v1450937792/sanfran_ck911l.jpg')
+//  no-repeat center center;
+//  -webkit-background-size: cover;
+//  -moz-background-size: cover;
+//  -o-background-size: cover;
+//  background-size: cover;
+// }
 
 .splash-area2 {
  position: relative;
@@ -521,7 +548,7 @@ html {
 }
 body {
  margin: 0;
- // padding: 45px 0 0 0;
+ padding: 190px 0 0 0;
 }
 article,
 aside,
@@ -2114,8 +2141,8 @@ pre code {
 .container-fluid {
  margin-right: auto;
  margin-left: auto;
- padding-left: 120px;
- padding-right: 120px;
+ // padding-left: 120px;
+ // padding-right: 120px;
 }
 .row {
  margin-left: -15px;
@@ -4750,8 +4777,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
  .container-fluid > .navbar-header,
  .container > .navbar-collapse,
  .container-fluid > .navbar-collapse {
-   margin-right: 15vw;
-   margin-left: 15vw;
+   margin-right: 5vw;
+   margin-left: 5vw;
  }
 }
 .navbar-static-top {
@@ -6334,7 +6361,7 @@ button.list-group-item-danger.active:focus {
  min-height: 20px;
  padding: 19px;
  margin-bottom: 20px;
- background-color: #f8f5f0;
+ // background-color: #f8f5f0;
  border: 1px solid transparent;
  border-radius: 4px;
  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);

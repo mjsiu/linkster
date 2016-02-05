@@ -52,11 +52,13 @@
 	var IndexRoute = ReactRouter.IndexRoute;
 	var App = __webpack_require__(208);
 	var Index = __webpack_require__(210);
+	var LinkListForm = __webpack_require__(215);
 	
 	var routes = React.createElement(
 	  Route,
 	  { path: '/', component: App },
-	  React.createElement(IndexRoute, { component: Index })
+	  React.createElement(IndexRoute, { component: Index }),
+	  React.createElement(Route, { path: 'link_lists/new', component: LinkListForm })
 	);
 	
 	document.addEventListener("DOMContentLoaded", function () {
@@ -24172,14 +24174,59 @@
 	      null,
 	      React.createElement(
 	        'nav',
-	        { className: 'navbar navbar-default' },
+	        { className: 'navbar navbar-default navbar-fixed-top' },
 	        React.createElement(
 	          'div',
 	          { className: 'container-fluid' },
 	          React.createElement(
 	            'div',
 	            { className: 'collapse navbar-collapse', id: 'bs-example-navbar-collapse-1' },
+	            React.createElement(
+	              'ul',
+	              { className: 'nav navbar-nav' },
+	              React.createElement(
+	                'li',
+	                { className: 'active' },
+	                React.createElement(
+	                  'a',
+	                  { onClick: this.handleHomeClick },
+	                  'Linkster'
+	                )
+	              ),
+	              React.createElement(
+	                'li',
+	                null,
+	                React.createElement(
+	                  'a',
+	                  { onClick: this.handleCreateClick },
+	                  'Create Link List ',
+	                  React.createElement(
+	                    'span',
+	                    { className: 'sr-only' },
+	                    '(current)'
+	                  )
+	                )
+	              ),
+	              React.createElement(
+	                'li',
+	                null,
+	                React.createElement(
+	                  'a',
+	                  { onClick: this.handleSearchClick },
+	                  'Explore'
+	                )
+	              )
+	            ),
 	            React.createElement(Login, { history: this.props.history })
+	          ),
+	          React.createElement(
+	            'div',
+	            { className: 'banner' },
+	            React.createElement(
+	              'h1',
+	              { className: 'banner-title' },
+	              'Linkster'
+	            )
 	          )
 	        )
 	      )
@@ -24204,15 +24251,6 @@
 	    return React.createElement(
 	      'div',
 	      null,
-	      React.createElement(
-	        'div',
-	        { className: 'banner' },
-	        React.createElement(
-	          'h1',
-	          { className: 'banner-title' },
-	          'Linkster'
-	        )
-	      ),
 	      React.createElement(HomeNavBar, null),
 	      React.createElement('div', { className: 'home-body' })
 	    );
@@ -24250,7 +24288,7 @@
 	      null,
 	      React.createElement(
 	        "nav",
-	        { className: "navbar navbar-default" },
+	        { className: "navbar navbar-default home" },
 	        React.createElement(
 	          "div",
 	          { className: "container-fluid" },
@@ -24265,13 +24303,8 @@
 	                null,
 	                React.createElement(
 	                  "a",
-	                  { onClick: this.handleCreateClick },
-	                  "Create Link List ",
-	                  React.createElement(
-	                    "span",
-	                    { className: "sr-only" },
-	                    "(current)"
-	                  )
+	                  { onClick: this.handleSearchClick },
+	                  "Featured"
 	                )
 	              ),
 	              React.createElement(
@@ -24280,30 +24313,7 @@
 	                React.createElement(
 	                  "a",
 	                  { onClick: this.handleSearchClick },
-	                  "Explore"
-	                )
-	              ),
-	              React.createElement(
-	                "li",
-	                { className: "active" },
-	                React.createElement(
-	                  "a",
-	                  { onClick: this.handleHomeClick },
-	                  "Linkster"
-	                )
-	              ),
-	              React.createElement(
-	                "li",
-	                null,
-	                React.createElement(
-	                  "a",
-	                  { onClick: this.handleCreateClick },
-	                  "Create Link List ",
-	                  React.createElement(
-	                    "span",
-	                    { className: "sr-only" },
-	                    "(current)"
-	                  )
+	                  "General CS"
 	                )
 	              ),
 	              React.createElement(
@@ -24312,7 +24322,52 @@
 	                React.createElement(
 	                  "a",
 	                  { onClick: this.handleSearchClick },
-	                  "Explore"
+	                  "Algorithms & Datastructures"
+	                )
+	              ),
+	              React.createElement(
+	                "li",
+	                null,
+	                React.createElement(
+	                  "a",
+	                  { onClick: this.handleSearchClick },
+	                  "Javascript"
+	                )
+	              ),
+	              React.createElement(
+	                "li",
+	                null,
+	                React.createElement(
+	                  "a",
+	                  { onClick: this.handleSearchClick },
+	                  "Ruby on Rails"
+	                )
+	              ),
+	              React.createElement(
+	                "li",
+	                null,
+	                React.createElement(
+	                  "a",
+	                  { onClick: this.handleSearchClick },
+	                  "SQL"
+	                )
+	              ),
+	              React.createElement(
+	                "li",
+	                null,
+	                React.createElement(
+	                  "a",
+	                  { onClick: this.handleSearchClick },
+	                  "Dev Tools"
+	                )
+	              ),
+	              React.createElement(
+	                "li",
+	                null,
+	                React.createElement(
+	                  "a",
+	                  { onClick: this.handleSearchClick },
+	                  "More"
 	                )
 	              )
 	            )
@@ -24428,6 +24483,31 @@
 	});
 	
 	module.exports = Login;
+
+/***/ },
+/* 214 */,
+/* 215 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var LinkListForm = React.createClass({
+	  displayName: 'LinkListForm',
+	
+	  render: function () {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'h1',
+	        null,
+	        ' hi'
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = LinkListForm;
 
 /***/ }
 /******/ ]);

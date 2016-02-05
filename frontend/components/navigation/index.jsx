@@ -7,12 +7,9 @@ var Index = React.createClass({
 
   return (
     <div>
-    <div className="banner">
-      <h1 className="banner-title">Linkster</h1>
-    </div>
     <HomeNavBar/>
     <div className="home-body"/>
-      
+
     </div>
   )
   }
