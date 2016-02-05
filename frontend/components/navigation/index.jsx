@@ -1,5 +1,5 @@
 var React = require('react');
-var HomeNavBar = require('./homeNavBar');
+var HomeNavBar = require('./home_nav_bar');
 
 var Index = React.createClass({
 

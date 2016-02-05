@@ -6,7 +6,7 @@ var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
 var App = require('./components/navigation/app');
 var Index = require('./components/navigation/index');
-var LinkListForm = require('./components/link_list/linkListForm')
+var LinkListForm = require('./components/link_list/link_list_form')
 
 var routes = (
     <Route path="/" component={App}>
